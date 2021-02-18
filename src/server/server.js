@@ -16,7 +16,7 @@ const PIXABAY_KEY_URL = `&key=${process.env.PIXABAY_KEY}`
 const PIXABAY_PARAMS = "&image_type=photo&orientation=horizontal&safesearch=true&per_page=100"
 
 // Initialise object to store user/API data on server side
-const allData = []
+let allData = {}
 
 // Required server boilerplate
 const express = require('express')
@@ -134,13 +134,18 @@ async function callPhoto(req, res) {
 }
 
 // Endpoint for the data storage route
-app.post('/storedata', storeData)
+app.get('/retrieve', getData);
 
-function storeData(req, res) {
-    allData.push(req.body)
+function getData (req, res) {
+    res.send(allData);
+};
+
+app.post('/storeData', storeData);
+
+function storeData (req, res) {
+    allData = req.body;
+    res.send('POST received');
     console.log(allData)
-    res.send({ message: "Data received and stored" })
-}
-
+};
 
 

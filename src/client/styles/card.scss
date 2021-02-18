@@ -1,0 +1,54 @@
+$primary-color: #E7717D;
+$shadow-color: #97a4af;
+$extra-color: #E7717D;
+$card-color: #edf0f1;
+$font-size: 2rem;
+
+.forecast-card-container {
+    grid-area: 4/1/5/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    padding: 20px;
+}
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid $primary-color;
+    border-radius: 60px;
+    background-color: $card-color;
+    box-shadow: 5px 5px 5px $shadow-color;
+    padding: 5px;
+    font-size: $font-size;
+
+    .icon {
+        border: 2px solid $extra-color;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 50%;
+        box-shadow: 3px 3px 3px $shadow-color;
+    }
+    .description {
+        color: $extra-color;
+        margin-bottom: 5%;
+    }
+    .size {
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1099px) {
+    
+    .forecast-card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .forecast-card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

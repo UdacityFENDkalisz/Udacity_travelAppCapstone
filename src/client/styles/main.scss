@@ -1,0 +1,161 @@
+$primary-color: #E7717D;
+$shadow-color: #4c5257;
+$inactive-color: #E7717D;
+$hover-color: #97a4af;
+$h1-font-size: 5rem;
+$h2-font-size: 3rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 1.5rem;
+$footer-font-size: 1rem;
+$reg-font-size: 2rem;
+
+h1 {
+    font-size: $h1-font-size;
+    font-family: 'Amatic SC', cursive;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    padding: 0 10px;
+}
+
+h3 {
+    font-size: $h3-font-size;
+    margin: 10px;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    font-family: 'Josefin Slab', serif;
+    background-color: #C2CAD0;
+}
+
+header {
+    grid-area: 1/1/2/2;
+    color: $primary-color;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 2px $shadow-color;
+}
+
+.results-container {
+    grid-area: 3/1/4/2;
+    margin: 30px;
+    margin-bottom: 0px;
+    justify-items: center;
+
+    #how-many-sleeps{
+        grid-column: 1 / span 3;
+        font-size: 2.5em;
+    }
+    .location-image-container{
+        grid-column: 1 / span 3;
+    }
+    #forecast-title{
+        grid-column: 1 / span 1;
+        font-family: 'Amatic SC', cursive;
+        font-size: 4em;
+    }
+}
+
+.location-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .change-image-button {
+        background-color: $inactive-color;
+        color:black;
+        cursor: pointer;
+        border-color: black;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 270px;
+        font-size: $reg-font-size;
+        font-weight: normal;
+        font-family: 'Josefin Slab', serif;
+        box-shadow: 2px 2px 4px $shadow-color;
+        transition: 0.3s;
+
+        &:hover {
+            color: white;
+            outline: none;
+            background-color: $primary-color;
+            border: 2px solid $hover-color;
+        }
+
+        &:focus {
+            color: white;
+            outline: none;
+            background-color: $primary-color;
+            border: 5px solid black;
+        }
+
+        &:active {
+            color: white;
+            background-color: $hover-color;
+        }
+    }
+}
+
+.api-logo-container {
+    grid-area: 5/1/6/2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+
+    .logo {
+        height: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    grid-area: 6/1/7/2;
+    color: $primary-color;
+    font-size: $footer-font-size;
+    font-weight: bold;
+    padding: 10px;
+    text-shadow: 1px 1px 1px $shadow-color;
+}
+
+@media (min-width: 1000px) {
+
+    .results-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 30px;
+    }
+
+    .location-image-container {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .api-logo-container {
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-around;
+        margin-top: 40px;
+
+        .api-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Travel weather app">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Josefin+Slab&display=swap" rel="stylesheet">
+    <title>Vacation Weather App</title>
+</head>
+
+<body>
+    <header>
+        <h1>Vacation Weather Guide</h1>
+    </header>
+    <form id="input-form" class="input-form">
+        <div id="destination" class="user-input">
+            <label for="destination-city">Destination City</label>
+            <input type="text" id="destination-city" placeholder="Where are you going?">
+        </div>
+        <div id="departure" class="user-input">
+            <label for="departure-date">Departure Date</label>
+            <input type="date" id="departure-date">
+        </div>
+        <div id="return" class="user-input">
+            <label for="return-date">Return Date</label>
+            <input type="date" id="return-date">
+        </div>
+        <div id="units" class="user-input">
+            <legend>Select units:</legend>
+            <div class="radio">
+                <label for="metric">Metric</label>
+                <input type="radio" name="units" id="metric" value="metric" checked>
+                <label for="imperial">Imperial</label>
+                <input type="radio" name="units" id="imperial" value="imperial">
+            </div>
+        </div>
+        <div id="error-message" class="error-message"></div>
+        <input type="submit" id="submit-button" class="button" value="Submit">
+        <input type="submit" id="clear-button" class="button" value="Reset">
+    </form>
+    <section id="results-container" class="results-container">
+        <h2 id="how-many-sleeps" class="result"></h2>
+        <div id="location-image-container" class="location-image-container result"></div>
+        <h2 id="forecast-title" class="result"></h2>
+    </section>
+    <section id="forecast-card-container" class="forecast-card-container"></section>
+    <section id="api-logo-container" class="api-logo-container">
+        <h4>Powered by:</h4>
+        <a class="api-link" href="http://www.geonames.org/" target="blank"><img class="logo"
+                src="../media/api-logos/geonames-logo.jpg" alt="Geonames API logo"></a>
+        <a class="api-link" href="https://www.weatherbit.io/" target="blank"><img class="logo"
+                src="../media/api-logos/weatherbit-logo.png" alt="Weatherbit API logo"></a>
+        <a class="api-link" href="https://pixabay.com/" target="blank"><img class="logo"
+                src="../media/api-logos/pixabay-logo.png" alt="Pixabay API logo"></a>
+    </section>
+    <footer>
+        2021. Capstone for Udacity's Front End Nanodegree
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

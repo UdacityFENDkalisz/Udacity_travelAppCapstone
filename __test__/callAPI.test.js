@@ -8,8 +8,8 @@ describe("Test API call", () => {
                 departureDate: "2021-02-24",
                 destinationCity: "London",
                 returnDate: "2021-02-27",
-                timeUntilReturn: 10,
-                timeUntilTrip: 7,
+                timeUntilReturn: 9,
+                timeUntilTrip: 6,
                 tripDuration: 3,
                 units: "M"
             }

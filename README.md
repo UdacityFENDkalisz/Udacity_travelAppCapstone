@@ -23,6 +23,8 @@ PIXABAY_KEY = {your key here}
 ```
 Once you have added your keys to the template file, change its name to *.env*
 
+Note: for Udacity submission, filler API keys have been replaced with this user's info for ease of use.
+
 ## Installation & Running the Application
 If *Node* is installed, then you can use the *Node Package Manager (npm)* to install the packages needed to run this program. In the terminal, use this command:
 

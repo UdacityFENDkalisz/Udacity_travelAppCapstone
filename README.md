@@ -36,6 +36,11 @@ npm run dev (Builds the application for development.)
 npm run build (Builds the application for production.)
 npm run start (Starts the node server AFTER the production application is built)
 ```
+## Technologies used
+    * Webpack
+    * Express
+    * Babel
+    * Supertest
 
 ## Using the App
 The server is set to **port 8087**. Start the server with the command as described in the previous section.
